@@ -2,55 +2,35 @@
 @import "tailwindcss/utilities.css" layer(utilities) prefix(ac);
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Column Placeholder - Only for empty state "+ Add" button */
-.fi-body .fi-ta-btn-placeholder .fi-ta-placeholder {
+/* Empty state "+ Add" button */
+.fi-body .fi-ta-text-item .fi-ta-placeholder {
     @apply ac:inline-block ac:text-sm ac:font-medium ac:text-center;
     @apply ac:text-zinc-400 ac:bg-white ac:border ac:border-zinc-200 ac:rounded;
     @apply ac:transition-all ac:duration-200;
-    padding: 0.25rem 0.75rem;
+    padding: 0.125rem 0.5rem;
+    margin: 0 !important;
+    display: inline-block !important;
 }
 
-.fi-body .fi-ta-btn-placeholder .fi-ta-placeholder:hover {
+.fi-body .fi-ta-text-item .fi-ta-placeholder:hover {
     @apply ac:bg-zinc-100;
-    color: rgb(0 0 0) !important; /* Black by default when no color is set */
+    color: rgb(44, 42, 42) !important;
 }
 
-/* Dynamic color based on column color */
-.fi-body .fi-ta-btn-placeholder .fi-ta-placeholder[data-color="success"]:hover {
-    color: rgb(22 163 74) !important; /* green-600 */
-}
-
-.fi-body .fi-ta-btn-placeholder .fi-ta-placeholder[data-color="danger"]:hover {
-    color: rgb(220 38 38) !important; /* red-600 */
-}
-
-.fi-body .fi-ta-btn-placeholder .fi-ta-placeholder[data-color="warning"]:hover {
-    color: rgb(217 119 6) !important; /* amber-600 */
-}
-
-.fi-body .fi-ta-btn-placeholder .fi-ta-placeholder[data-color="info"]:hover {
-    color: rgb(37 99 235) !important; /* blue-600 */
-}
-
-.fi-body .fi-ta-btn-placeholder .fi-ta-placeholder[data-color="primary"]:hover {
-    color: rgb(99 102 241) !important; /* indigo-600 */
-}
-
-.dark .fi-body .fi-ta-btn-placeholder .fi-ta-placeholder {
+.dark .fi-body .fi-ta-text-item .fi-ta-placeholder {
     @apply ac:text-white ac:bg-zinc-700 ac:border-zinc-700;
 }
 
-.dark .fi-body .fi-ta-btn-placeholder .fi-ta-placeholder:hover {
-    @apply ac:text-white ac:bg-zinc-600;
+.dark .fi-body .fi-ta-text-item .fi-ta-placeholder:hover {
+    @apply ac:text-white ac:bg-zinc-400;
 }
 
-/* Separated Mode - Badge and Button Alignment (Connected Design) */
+/* Badge and button connected layout */
 .fi-actionable-separated {
     @apply ac:flex ac:items-stretch;
     gap: 0 !important;
 }
 
-/* Badge styling when connected to button - match exact height */
 .fi-actionable-separated .fi-badge {
     @apply ac:inline-flex ac:items-center;
     height: 1.5rem !important;
@@ -59,14 +39,16 @@
     line-height: 1.5rem !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgb(229 231 235) !important;
 }
 
-/* When badge has action button, remove right border radius and border */
 .fi-actionable-separated .fi-badge.fi-badge-connected,
 .fi-actionable-separated .fi-badge[style*="border-top-right-radius: 0"] {
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
-    border-right: none !important;
+    border-right: 1px solid rgb(229 231 235) !important;
     margin-right: 0 !important;
     padding-right: 0.5rem !important;
 }
@@ -79,16 +61,41 @@
     margin-left: 0 !important;
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
-    border-left: none !important;
+    border-left:  rgb(229 231 235) !important;
+    border-top: 1.5px solid rgb(229 231 235) !important;
+    border-right: 1.5px solid rgb(229 231 235) !important;
+    border-bottom: 1.5px solid rgb(229 231 235) !important;
+    background-color: transparent !important;
+    overflow: hidden !important;
 }
 
-/* Dark mode adjustments */
-.dark .fi-actionable-separated .fi-action-btn {
-    background-color: rgb(31 41 55) !important; /* gray-800 */
-    border-color: rgb(55 65 81) !important; /* gray-700 */
+/* Dark mode badge and button */
+.dark .fi-actionable-separated .fi-badge {
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgba(63, 63, 70, 0.3) !important;
+    border-right: 1px solid rgba(63, 63, 70, 0.3) !important;
+    box-shadow: none !important;
+    outline: none !important;
 }
 
-.dark .fi-actionable-separated .fi-action-btn:hover {
-    background-color: rgb(55 65 81) !important; /* gray-700 */
+.dark .fi-ta-text-item .fi-actionable-separated .fi-action-btn {
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgba(199, 199, 199, 0.2) !important;
+    border-left: 1.5px solid rgba(199, 199, 199, 0.3) !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+    overflow: hidden !important;
 }
 
+.dark .fi-actionable-separated .fi-badge.fi-color-gray + .fi-action-btn,
+.dark .fi-actionable-separated .fi-action-btn:not([data-badge-color]) {
+    background-color: rgba(63, 63, 70, 0.3) !important;
+}
+
+.dark .fi-actionable-separated .fi-action-btn svg {
+    filter: brightness(1.5) !important;
+    opacity: 1 !important;
+}
