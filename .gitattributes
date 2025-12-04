@@ -1,0 +1,21 @@
+# Ignore dev directories
+
+/tests export-ignore
+/.github export-ignore
+/.vscode export-ignore
+/.idea export-ignore
+/docker export-ignore
+
+# Ignore environment & tooling files
+
+.env export-ignore
+.env.example export-ignore
+.phpunit.result.cache export-ignore
+.phpcs.xml export-ignore
+.phpstan.neon export-ignore
+.psalm.xml export-ignore
+
+# Ignore build/CI helpers
+
+.DS_Store export-ignore
+*.log export-ignore
