@@ -1,0 +1,101 @@
+@import "tailwindcss/theme.css" layer(theme) prefix(ac);
+@import "tailwindcss/utilities.css" layer(utilities) prefix(ac);
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Empty state "+ Add" button */
+.fi-body .fi-ta-text-item .fi-ta-placeholder {
+    @apply ac:inline-block ac:text-sm ac:font-medium ac:text-center;
+    @apply ac:text-zinc-400 ac:bg-white ac:border ac:border-zinc-200 ac:rounded;
+    @apply ac:transition-all ac:duration-200;
+    padding: 0.125rem 0.5rem;
+    margin: 0 !important;
+    display: inline-block !important;
+}
+
+.fi-body .fi-ta-text-item .fi-ta-placeholder:hover {
+    @apply ac:bg-zinc-100;
+    color: rgb(44, 42, 42) !important;
+}
+
+.dark .fi-body .fi-ta-text-item .fi-ta-placeholder {
+    @apply ac:text-white ac:bg-zinc-700 ac:border-zinc-700;
+}
+
+.dark .fi-body .fi-ta-text-item .fi-ta-placeholder:hover {
+    @apply ac:text-white ac:bg-zinc-400;
+}
+
+/* Badge and button connected layout */
+.fi-actionable-separated {
+    @apply ac:flex ac:items-stretch;
+    gap: 0 !important;
+}
+
+.fi-actionable-separated .fi-badge {
+    @apply ac:inline-flex ac:items-center;
+    height: 1.5rem !important;
+    min-height: 1.5rem !important;
+    max-height: 1.5rem !important;
+    line-height: 1.5rem !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgb(229 231 235) !important;
+}
+
+.fi-actionable-separated .fi-badge.fi-badge-connected,
+.fi-actionable-separated .fi-badge[style*="border-top-right-radius: 0"] {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-right: 1px solid rgb(229 231 235) !important;
+    margin-right: 0 !important;
+    padding-right: 0.5rem !important;
+}
+
+.fi-actionable-separated .fi-action-btn {
+    @apply ac:flex-shrink-0;
+    height: 1.5rem !important;
+    min-height: 1.5rem !important;
+    max-height: 1.5rem !important;
+    margin-left: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-left:  rgb(229 231 235) !important;
+    border-top: 1.5px solid rgb(229 231 235) !important;
+    border-right: 1.5px solid rgb(229 231 235) !important;
+    border-bottom: 1.5px solid rgb(229 231 235) !important;
+    background-color: transparent !important;
+    overflow: hidden !important;
+}
+
+/* Dark mode badge and button */
+.dark .fi-actionable-separated .fi-badge {
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgba(63, 63, 70, 0.3) !important;
+    border-right: 1px solid rgba(63, 63, 70, 0.3) !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.dark .fi-ta-text-item .fi-actionable-separated .fi-action-btn {
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgba(199, 199, 199, 0.2) !important;
+    border-left: 1.5px solid rgba(199, 199, 199, 0.3) !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+    overflow: hidden !important;
+}
+
+.dark .fi-actionable-separated .fi-badge.fi-color-gray + .fi-action-btn,
+.dark .fi-actionable-separated .fi-action-btn:not([data-badge-color]) {
+    background-color: rgba(63, 63, 70, 0.3) !important;
+}
+
+.dark .fi-actionable-separated .fi-action-btn svg {
+    filter: brightness(1.5) !important;
+    opacity: 1 !important;
+}
