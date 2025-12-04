@@ -1,6 +1,6 @@
 <?php
 
-namespace Shreejan\FilamentActionableColumns\Tables\Columns;
+namespace Shreejan\ActionableColumn\Tables\Columns;
 
 use Closure;
 use Filament\Actions\Action;

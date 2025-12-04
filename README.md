@@ -1,6 +1,6 @@
-# Filament Actionable Columns
+# Actionable Column
 
-The **Filament Actionable Columns** plugin allows you to add interactive action buttons to Filament table columns. Display text or badges with seamlessly connected action buttons using Filament's native Action system.
+The **Actionable Column** plugin allows you to add interactive action buttons to Filament table columns. Display text or badges with seamlessly connected action buttons using Filament's native Action system.
 
 ## Features
 
@@ -18,13 +18,13 @@ The **Filament Actionable Columns** plugin allows you to add interactive action 
 You can install the package via composer:
 
 ```bash
-composer require shreejan/filament-actionable-columns
+composer require shreejan/actionable-column
 ```
 
 ## Usage
 
 ```php
-use Shreejan\FilamentActionableColumns\Tables\Columns\ActionableColumn;
+use Shreejan\ActionableColumn\Tables\Columns\ActionableColumn;
 use Filament\Actions\Action;
 use Filament\Forms\Components\Select;
 use Filament\Support\Icons\Heroicon;

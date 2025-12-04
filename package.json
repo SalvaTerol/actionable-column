@@ -1,12 +1,12 @@
 {
-  "name": "filament-actionable-columns",
+  "name": "actionable-column",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "npx @tailwindcss/cli -i ./resources/css/actionable-columns.css -o ./resources/dist/css/actionable-columns.css --build --minify && php ../../../artisan filament:assets && cd -",
-    "dev": "npx @tailwindcss/cli -i ./resources/css/actionable-columns.css -o ./resources/dist/css/actionable-columns.css --watch --minify"
+    "build": "npx @tailwindcss/cli -i ./resources/css/actionable-column.css -o ./resources/dist/css/actionable-column.css --build --minify && php ../../../artisan filament:assets && cd -",
+    "dev": "npx @tailwindcss/cli -i ./resources/css/actionable-column.css -o ./resources/dist/css/actionable-column.css --watch --minify"
   },
   "author": "",
   "license": "ISC",

@@ -1,14 +1,13 @@
 {
-    "name": "shreejan/filament-actionable-columns",
-    "version": "1.0.0",
-    "description": "Interactive table columns with clickable actions for Filament v4",
+    "name": "shreejan/actionable-column",
+    "description": "Interactive table column with clickable actions for Filament v4",
     "keywords": [
         "filament",
         "filament-plugin",
         "table-columns",
-        "actionable-columns",
-        "interactive-columns",
-        "clickable-columns"
+        "actionable-column",
+        "interactive-column",
+        "clickable-column"
     ],
     "type": "library",
     "license": "MIT",
@@ -27,13 +26,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Shreejan\\FilamentActionableColumns\\": "src/"
+            "Shreejan\\ActionableColumn\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Shreejan\\FilamentActionableColumns\\ActionableColumnsServiceProvider"
+                "Shreejan\\ActionableColumn\\ActionableColumnServiceProvider"
             ]
         }
     },

@@ -10,5 +10,5 @@ return [
     |
     */
 
-    'placeholder' => env('FILAMENT_ACTIONABLE_COLUMNS_PLACEHOLDER', 'N/A'),
+    'placeholder' => env('ACTIONABLE_COLUMN_PLACEHOLDER', 'N/A'),
 ];

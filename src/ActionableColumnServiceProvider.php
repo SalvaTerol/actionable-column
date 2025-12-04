@@ -1,15 +1,15 @@
 <?php
 
-namespace Shreejan\FilamentActionableColumns;
+namespace Shreejan\ActionableColumn;
 
 use Filament\Support\Assets\Css;
 use Filament\Support\Facades\FilamentAsset;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class ActionableColumnsServiceProvider extends PackageServiceProvider
+class ActionableColumnServiceProvider extends PackageServiceProvider
 {
-    public static string $name = 'filament-actionable-columns';
+    public static string $name = 'actionable-column';
 
     public function configurePackage(Package $package): void
     {
@@ -25,11 +25,11 @@ class ActionableColumnsServiceProvider extends PackageServiceProvider
         FilamentAsset::register(
             assets: [
                 Css::make(
-                    id: 'filament-actionable-columns',
-                    path: __DIR__.'/../resources/dist/css/actionable-columns.css'
+                    id: 'actionable-column',
+                    path: __DIR__.'/../resources/dist/css/actionable-column.css'
                 ),
             ],
-            package: 'shreejan/filament-actionable-columns'
+            package: 'shreejan/actionable-column'
         );
     }
 }
