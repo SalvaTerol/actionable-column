@@ -28,9 +28,6 @@ class ActionableColumnServiceProvider extends PackageServiceProvider
             Css::make('actionable-column', __DIR__.'/../resources/dist/css/actionable-column.css'),
         ];
 
-        // Register custom CSS if provided (loads after default, allowing overrides)
-        // This solves the issue where composer install overwrites modified CSS in public/css/
-        // Custom CSS in resources/css/ won't be overwritten and loads after default CSS
         $customCssPath = $this->getCustomCssPath();
 
         if ($customCssPath && File::exists($customCssPath)) {
