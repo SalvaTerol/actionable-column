@@ -2,6 +2,8 @@
 
 The **Actionable Column** plugin allows you to add interactive action buttons to Filament table columns. Display text or badges with seamlessly connected action buttons using Filament's native Action system.
 
+**Compatible with Filament v4 and v5**
+
 ## Features
 
 - Badge mode with connected action button
