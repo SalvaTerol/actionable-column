@@ -73,6 +73,16 @@ ActionableColumn::make('status')
 
 All standard `TextColumn` methods are available: `searchable()`, `sortable()`, `limit()`, `date()`, `formatStateUsing()`, etc.
 
+## CSS Customization
+
+To customize styles without losing changes during `composer install` or `composer update`:
+
+**Default location:** Create `resources/css/actionable-column-custom.css` (auto-detected)
+
+**Custom location:** Set `ACTIONABLE_COLUMN_CUSTOM_CSS_PATH` in `.env` or `config/actionable-column.php`
+
+The custom CSS loads after the default styles, allowing overrides without modifying published assets.
+
 ## Credits
 
 - [Shreejan][link-author]
