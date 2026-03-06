@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "npx @tailwindcss/cli -i ./resources/css/actionable-column.css -o ./resources/dist/css/actionable-column.css --build --minify && php ../../../artisan filament:assets && cd -",
+    "build": "npx @tailwindcss/cli -i ./resources/css/actionable-column.css -o ./resources/dist/css/actionable-column.css --minify && node -e \"const fs=require('fs');let c=fs.readFileSync('./resources/dist/css/actionable-column.css','utf8');c=c.replace(/@layer\\s+properties\\s*\\{[^}]*(?:\\{[^}]*\\}[^}]*)*\\}/g,'').replace(/@layer\\s+[\\w,\\s]+;/g,'').replace(/@layer\\s+theme\\s*\\{[^}]*\\}/g,'').trim();fs.writeFileSync('./resources/dist/css/actionable-column.css',c);\" && php ../../../artisan filament:assets && cd -",
     "dev": "npx @tailwindcss/cli -i ./resources/css/actionable-column.css -o ./resources/dist/css/actionable-column.css --watch --minify"
   },
   "author": "",
