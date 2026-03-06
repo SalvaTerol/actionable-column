@@ -1,3 +1,5 @@
+@layer theme, base, components, utilities;
+
 /* Empty state "+ Add" button */
 .fi-body .fi-ta-text-item .fi-ta-placeholder {
     @apply ac:inline-block ac:text-sm ac:font-medium ac:text-center;
